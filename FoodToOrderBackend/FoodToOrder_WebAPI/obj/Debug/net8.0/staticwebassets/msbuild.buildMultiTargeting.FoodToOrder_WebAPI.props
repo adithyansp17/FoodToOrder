@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\FoodToOrder_WebAPI.props" />
+</Project>

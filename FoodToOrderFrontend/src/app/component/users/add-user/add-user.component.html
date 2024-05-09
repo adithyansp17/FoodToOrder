@@ -1,0 +1,298 @@
+<form
+  [formGroup]="addUserForm"
+  (ngSubmit)="OnSubmit(addUserForm.value)"
+  class="needs-validation"
+  novalidate
+  [class.error]="!addUserForm.valid && addUserForm.touched"
+>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('firstName')?.valid && addUserForm.get('firstName')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="firstName" class="form-label">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="Enter First Name"
+            required
+          />
+          <div *ngIf="!firstName.valid" style="color: red;" class="form_error">
+            firstName is Invalid
+          </div>
+          <div *ngIf="firstName.hasError('required')" class="invalid-feedback">
+            firstName is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      [class.error]="!addUserForm.get('lastName')?.valid && addUserForm.get('lastName')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Enter Last Name"
+            required
+          />
+          <div *ngIf="!lastName.valid" style="color: red;" class="form_error">
+            lastName is Invalid
+          </div>
+          <div *ngIf="lastName.hasError('required')" class="invalid-feedback">
+            lastName is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('DOB')?.valid && addUserForm.get('DOB')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="DOB" class="form-label">Date of Birth</label>
+          <input
+            type="date"
+            class="form-control"
+            id="DOB"
+            formControlName="DOB"
+            required
+          />
+          <div *ngIf="!DOB.valid" style="color: red;" class="form_error">
+            DOB is Invalid
+          </div>
+          <div *ngIf="DOB.hasError('required')" class="invalid-feedback">
+            DOB is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('email')?.valid && addUserForm.get('email')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            formControlName="email"
+            placeholder="Enter Email Address"
+            required
+          />
+          <div *ngIf="!email.valid" style="color: red;" class="form_error">
+            email is Invalid
+          </div>
+          <div *ngIf="email.hasError('required')" class="invalid-feedback">
+            email is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      [class.error]="!addUserForm.get('password')?.valid && addUserForm.get('password')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            placeholder="Enter Password"
+            required
+          />
+          <div *ngIf="!password.valid" style="color: red;" class="form_error">
+            password is Invalid
+          </div>
+          <div *ngIf="password.hasError('required')" class="invalid-feedback">
+            password is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('cpassword')?.valid && addUserForm.get('cpassword')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="cpassword" class="form-label">Confirm Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="cpassword"
+            formControlName="cpassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <div *ngIf="!cpassword.valid" style="color: red;" class="form_error">
+            password is Mismatched
+          </div>
+          <div *ngIf="cpassword.hasError('required')" class="invalid-feedback">
+            password is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('houseno')?.valid && addUserForm.get('houseno')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="houseno" class="form-label">House No.</label>
+          <input
+            type="text"
+            class="form-control"
+            id="houseno"
+            formControlName="houseno"
+            placeholder="Enter House No."
+            required
+          />
+          <div *ngIf="!houseno.valid" style="color: red;" class="form_error">
+            houseno is Invalid
+          </div>
+          <div *ngIf="houseno.hasError('required')" class="invalid-feedback">
+            houseno is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      [class.error]="!addUserForm.get('street')?.valid && addUserForm.get('street')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="street" class="form-label">Street</label>
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            formControlName="street"
+            placeholder="Enter Street"
+            required
+          />
+          <div *ngIf="!street.valid" style="color: red;" class="form_error">
+            street is Invalid
+          </div>
+          <div *ngIf="street.hasError('required')" class="invalid-feedback">
+            street is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('area')?.valid && addUserForm.get('area')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="area" class="form-label">Area</label>
+          <input
+            type="text"
+            class="form-control"
+            id="area"
+            formControlName="area"
+            placeholder="Enter Area"
+            required
+          />
+          <div *ngIf="!area.valid" style="color: red;" class="form_error">
+            area is Invalid
+          </div>
+          <div *ngIf="area.hasError('required')" class="invalid-feedback">
+            area is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      [class.error]="!addUserForm.get('city')?.valid && addUserForm.get('city')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="city" class="form-label">City</label>
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            formControlName="city"
+            placeholder="Enter City"
+            required
+          />
+          <div *ngIf="!city.valid" style="color: red;" class="form_error">
+            city is Invalid
+          </div>
+          <div *ngIf="city.hasError('required')" class="invalid-feedback">
+            city is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      [class.error]="!addUserForm.get('pincode')?.valid && addUserForm.get('pincode')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="pincode" class="form-label">Pin Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="pincode"
+            formControlName="pincode"
+            placeholder="Enter Pin Code"
+            required
+          />
+          <div *ngIf="!pincode.valid" style="color: red;" class="form_error">
+            pincode is Invalid
+          </div>
+          <div *ngIf="pincode.hasError('required')" class="invalid-feedback">
+            pincode is required
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      [class.error]="!addUserForm.get('country')?.valid && addUserForm.get('country')?.touched"
+    >
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="country" class="form-label">Country</label>
+          <input
+            type="text"
+            class="form-control"
+            id="country"
+            formControlName="country"
+            placeholder="Enter Country"
+            required
+          />
+          <div *ngIf="!country.valid" style="color: red;" class="form_error">
+            country is Invalid
+          </div>
+          <div *ngIf="country.hasError('required')" class="country-feedback">
+            country is required
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary space">Submit</button>
+</form>
